@@ -250,7 +250,7 @@ const routeForImplicitFlow = (
   const authorizationUrl = new URL(settings.auth.authorizationUrl);
   authorizationUrl.searchParams.set('response_type', 'id_token');
   authorizationUrl.searchParams.set('client_id', settings.auth.clientId);
-  authorizationUrl.searchParams.set('redirect_uri', settings.auth.callbackUrl);
+  authorizationUrl.searchParams.set('redirect_uri', originUrl);
   authorizationUrl.searchParams.set('scope', settings.auth.scopes.join(' '));
 
   const nonce = crypto.randomUUID();

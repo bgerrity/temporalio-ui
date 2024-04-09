@@ -60,6 +60,9 @@ func (c *AuthProvider) validate() error {
 		if c.AuthorizationURL != "" {
 			return errors.New("auth endpoint url is not used in auth code flow")
 		}
+		if c.CallbackURL == "" {
+			return errors.New("auth callback url is not set")
+		}
 	case "implicit":
 		// TODO: support oidc discovery in implicit flow
 		if c.ProviderURL != "" {
@@ -72,16 +75,16 @@ func (c *AuthProvider) validate() error {
 		if c.ClientSecret != "" {
 			return errors.New("no secrets in implicit flow")
 		}
+		if c.CallbackURL != "" {
+			return errors.New("auth callback url is not used in implicit flow")
+		}
+
 	default:
 		return errors.New("auth oidc flow is not valid")
 	}
 
 	if c.ClientID == "" {
 		return errors.New("auth client id is not set")
-	}
-
-	if c.CallbackURL == "" {
-		return errors.New("auth callback url is not set")
 	}
 
 	return nil

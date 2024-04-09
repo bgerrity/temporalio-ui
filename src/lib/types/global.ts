@@ -82,7 +82,6 @@ export type Settings = {
     issuerUrl: string;
     authorizationUrl: string;
     clientId: string;
-    callbackUrl: string;
     scopes: string[];
     options: string[];
   };

@@ -51,7 +51,6 @@ type Auth struct {
 	IssuerURL        string
 	AuthorizationURL string
 	ClientID         string
-	CallbackURL      string
 	Scopes           []string
 	Options          []string
 }
@@ -133,7 +132,6 @@ func GetSettings(cfgProvider *config.ConfigProviderWithRefresh) func(echo.Contex
 				IssuerURL:        authProviderCfg.IssuerURL,
 				AuthorizationURL: authProviderCfg.AuthorizationURL,
 				ClientID:         authProviderCfg.ClientID,
-				CallbackURL:      authProviderCfg.CallbackURL,
 				Scopes:           authProviderCfg.Scopes,
 				Options:          options,
 			},

@@ -209,7 +209,6 @@ export type SettingsResponse = {
     IssuerURL: string;
     AuthorizationURL: string;
     ClientID: string;
-    CallbackURL: string;
     Scopes: string[];
     Options: string[];
   };

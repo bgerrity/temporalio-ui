@@ -25,7 +25,6 @@ export const fetchSettings = async (request = fetch): Promise<Settings> => {
       issuerUrl: settingsResponse?.Auth?.IssuerURL,
       authorizationUrl: settingsResponse?.Auth?.AuthorizationURL,
       clientId: settingsResponse?.Auth?.ClientID,
-      callbackUrl: settingsResponse?.Auth?.CallbackURL,
       scopes: settingsResponse?.Auth?.Scopes,
       options: settingsResponse?.Auth?.Options,
     },
